@@ -1,0 +1,19 @@
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+/Users/kazuki_ogiwara/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20190221-42931-96qwdi.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20190221-42931-1p83u97/byebug

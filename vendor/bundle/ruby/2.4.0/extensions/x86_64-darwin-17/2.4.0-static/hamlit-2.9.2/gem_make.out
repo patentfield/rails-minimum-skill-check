@@ -1,0 +1,16 @@
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/hamlit-2.9.2/ext/hamlit
+/Users/kazuki_ogiwara/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20190221-42931-1k13e4x.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/hamlit-2.9.2/ext/hamlit
+make "DESTDIR=" clean
+
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/hamlit-2.9.2/ext/hamlit
+make "DESTDIR="
+compiling hamlit.c
+compiling hescape.c
+linking shared-object hamlit/hamlit.bundle
+
+current directory: /Users/kazuki_ogiwara/rails-minimum-skill-check/vendor/bundle/ruby/2.4.0/gems/hamlit-2.9.2/ext/hamlit
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 hamlit.bundle ./.gem.20190221-42931-qybnfv/hamlit

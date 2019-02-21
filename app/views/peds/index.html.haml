@@ -3,6 +3,12 @@
     Patent Examination Data System by USPTO
   %a{href: "https://ped.uspto.gov/peds/", target: "_blank"}
     link
+  %div.SearchForm
+    patent search
+    =form_tag("/peds/search") do
+      %input{:type=>:text, :name => :search, :value => @word}
+      =button_tag 'Go', type: :submit
+      =link_to("search history", "/peds/records")
   %ul
     %li
       %span

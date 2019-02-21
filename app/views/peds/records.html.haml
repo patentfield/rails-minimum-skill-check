@@ -1,0 +1,12 @@
+%div{style: "min-height:600px;"}
+  %h2
+    Patent Search History
+  %span
+    =form_tag("/peds/destroy") do
+      =button_tag 'delete history', type: :submit
+  %ul
+    - @words.each do |word|
+      %li{style: "font-size:20px;"}<
+        = word.word
+  %div{style: "font-size:20px;"}
+    =link_to("back","/peds")
