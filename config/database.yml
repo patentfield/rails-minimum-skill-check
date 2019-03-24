@@ -7,12 +7,14 @@ development:
   <<: *default
   database: min-skill_development
   username: devuser
+  passward:li6s2a109
   host: <%= ENV['RAILS_DATABASE_HOST'] || 'localhost' %>
 
 test:
   <<: *default
   database: min-skill_test
   username: devuser
+  passward:li6s2a109
   host: <%= ENV['RAILS_DATABASE_HOST'] || 'localhost' %>
 
 production:
