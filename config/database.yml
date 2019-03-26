@@ -7,7 +7,7 @@ development:
   <<: *default
   database: min-skill_development
   username: devuser
-  passward: li6s2a109
+  passward: devuser
   host: <%= ENV['RAILS_DATABASE_HOST'] || 'localhost' %>
 
 test:
