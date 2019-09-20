@@ -1,0 +1,9 @@
+class CreateSearchAssignee < ActiveRecord::Migration[5.1]
+  def change
+    create_table :search_assignee do |t|
+      t.string :value
+
+      t.timestamps
+    end
+  end
+end

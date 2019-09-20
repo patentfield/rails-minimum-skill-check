@@ -13,5 +13,9 @@ Rails.application.routes.draw do
     get "peds", to: 'peds#index'
     post "search_records", to: 'search_records#search'
     resources :search_records
+
+    get "assignee", to: 'assignee#index'
+    post "search_assignees", to: 'search_assignee#search'
+    resources :search_assignee
   end
 end
