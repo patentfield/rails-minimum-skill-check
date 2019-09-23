@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
 #below added
     get "assignee", to: 'assignee#index'
-    post "search_assignees", to: 'search_assignee#search'
-    resources :search_assignee
+    post "search_assignees", to: 'search_assignees#search'
+    resources :search_assignees
   end
 end
