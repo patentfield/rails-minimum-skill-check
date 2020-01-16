@@ -12,7 +12,7 @@ see https://qiita.com/shizuma/items/2b2f873a0034839e47ce
 (We can use git bash for command line on windows)
 
 3. install Docker for windows  
-https://store.docker.com/editions/community/docker-ce-desktop-windows 
+https://store.docker.com/editions/community/docker-ce-desktop-windows
 4. set to share local drive for docker process  
 Task tray -> Docker icon -> Settings -> Shared Drives -> check C -> Apply
 
@@ -71,12 +71,7 @@ bundle exec rake db:seed
 bundle exec rails s -b 0.0.0.0
 ```
 
-7. open http://localhost:3000/peds with your browser
-
-8. confirm data retrieved by PEDS API of USPTO
-   PEDS: https://ped.uspto.gov/peds/
-
-9. You can sign in with the following credential on development environment
+7. You can sign in with the following credential on development environment
 
 ```
 id: info@example.com
