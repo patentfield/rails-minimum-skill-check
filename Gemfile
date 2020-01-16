@@ -19,6 +19,7 @@ gem 'hamlit'
 gem "devise"
 gem 'bootstrap-sass'
 gem 'rest-client'
+gem 'webpacker'
 
 group :production do
   gem 'rails_12factor'
