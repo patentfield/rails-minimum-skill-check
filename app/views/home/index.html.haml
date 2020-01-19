@@ -1,9 +1,10 @@
-= javascript_pack_tag 'hello_vue'
+-# Needs js suffix if exists same dirs
+= javascript_pack_tag 'controllers/home.js'
 
 %div{style: "min-height:600px;"}
   %h4 Toppage
 
-  #hello
+  #home-app
     %el-row
       %el-col{":md": "12"}
         %el-progress{":percentage": "50"}
@@ -17,4 +18,11 @@
           ":value": "item.value"}
 
     {{message2}}
-    %app
+    {{selectedValue}}
+    %sample
+    %router-link{"to": "/page1"}
+      Page1
+    \|
+    %router-link{"to": "/page2"}
+      Page2
+    %router-view{"v-bind:message2": "message2"}

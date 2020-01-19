@@ -1,6 +1,8 @@
 <template>
-  <div id="app">
-    <p>{{ message1 }}</p>
+  <div class="page1">
+    page1area
+    <p>{{ message }}</p>
+    {{$route.param}}
   </div>
 </template>
 
@@ -15,8 +17,11 @@ p {
 export default {
   data: function () {
     return {
-      message1: "Hello Vue!"
+      message: "Hello Vue Page1!"
     }
+  },
+  components: function () {
+    "sample"
   }
 }
 </script>
