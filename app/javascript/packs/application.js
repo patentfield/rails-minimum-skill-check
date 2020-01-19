@@ -15,4 +15,36 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+import Vue from 'vue/dist/vue.esm'
+import VueRouter from 'vue-router';
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/ja'
+
+window.Vue = Vue;
+window.VueRouter = VueRouter;
+
+window.Vue.use(Element, {locale})
+window.Vue.use(VueRouter)
+
 console.log('Hello World from Webpacker')
+
+document.addEventListener('DOMContentLoaded', () => {
+  const navApp = new Vue({
+    el: '#nav-app',
+    data: {
+    },
+    mounted: () => {
+      console.log("nav app mounted");
+    }
+  })
+
+  const footerApp = new Vue({
+    el: '#footer-app',
+    data: {
+    },
+    mounted: () => {
+      console.log("footer app mounted");
+    }
+  })
+})
