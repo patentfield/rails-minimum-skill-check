@@ -34,12 +34,18 @@
 
 import Vue from 'vue/dist/vue.esm'
 import App from '../app.vue'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/ja'
+
+Vue.use(Element, {locale})
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: '#hello',
     data: {
-      message2: "Can you say hello?"
+      message2: "Can you say hello?",
+      selectedValue: ""
     },
     components: { App }
   })

@@ -4,5 +4,17 @@
   %h4 Toppage
 
   #hello
+    %el-row
+      %el-col{":md": "12"}
+        %el-progress{":percentage": "50"}
+      %el-col{":md": "12"}
+        %el-tag{"type": "success"}
+          Tag 2
+        %el-select{"v-model": "selectedValue"}
+          %el-option{"v-for": "item in [{value: 'v-a', label: 'v-l'}]",
+          ":key": "item.value",
+          ":label": "item.label",
+          ":value": "item.value"}
+
     {{message2}}
     %app

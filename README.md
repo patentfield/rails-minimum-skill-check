@@ -71,7 +71,13 @@ bundle exec rake db:seed
 bundle exec rails s -b 0.0.0.0
 ```
 
-7. You can sign in with the following credential on development environment
+7. run webpack dev server to build quickly
+
+```
+bin/webpack-dev-server
+```
+
+8. You can sign in with the following credential on development environment
 
 ```
 id: info@example.com
