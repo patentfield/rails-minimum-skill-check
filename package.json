@@ -8,6 +8,10 @@
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
+    "jest": "^24.9.0",
     "webpack-dev-server": "^3.10.1"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
