@@ -8,6 +8,8 @@
     "vue-template-compiler": "^2.6.11"
   },
   "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "babel-preset-es2015": "^6.24.1",
     "jest": "^24.9.0",
     "webpack-dev-server": "^3.10.1"
   },
