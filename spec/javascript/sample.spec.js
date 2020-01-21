@@ -1,1 +1,1 @@
-import Sample from '../../app/javascript/packs/components/sample.vue';
+import Sample from '/packs/components/sample.vue';
