@@ -48,7 +48,7 @@ bundle exec rake db:migrate
 
 2. create database user 'devuser'
 
-3. install ruby 2.6.6 (recommend using rbenv)
+3. install ruby 2.7.2 (recommend using rbenv)
 
 4. install gems via bundler
 
