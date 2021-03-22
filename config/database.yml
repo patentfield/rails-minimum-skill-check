@@ -2,18 +2,20 @@ default: &default
   adapter: postgresql
   timeout: 50000
   pool: <%= ENV["DB_POOL"] || ENV["RAILS_MAX_THREADS"] || 5 %>
-  
+
 development:
   <<: *default
   database: min-skill_development
   username: devuser
   host: <%= ENV['RAILS_DATABASE_HOST'] || 'localhost' %>
+  password: password
 
 test:
   <<: *default
   database: min-skill_test
   username: devuser
   host: <%= ENV['RAILS_DATABASE_HOST'] || 'localhost' %>
+  password: password
 
 production:
   <<: *default
