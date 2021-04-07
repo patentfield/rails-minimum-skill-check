@@ -9,7 +9,6 @@ module Usptos
       uri = URI.parse("https://ped.uspto.gov/api/queries")
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = uri.scheme === "https"
-      # word = params[:search]
       a_params = {
         "searchText":"firstNamedApplicant:(#{@word})",
         "fq":["appStatus:\"Patented Case\""],
@@ -26,7 +25,6 @@ module Usptos
       @J_data = JSON.parse(d_response.body)
       response = @J_data["queryResults"]["searchResponse"]["response"]["docs"]
 
-      # render json: res_data
     end
   end
 end
