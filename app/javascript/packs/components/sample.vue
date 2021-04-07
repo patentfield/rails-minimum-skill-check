@@ -1,6 +1,7 @@
 <template>
   <div class="sample">
     <p>{{ message }}</p>
+    <p>さんぷる</p>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ p {
 </style>
 
 <script>
+
 export default {
   data: function () {
     return {

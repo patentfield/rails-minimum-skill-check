@@ -2,6 +2,7 @@
 
 import Sample from '../components/sample.vue'
 import Page1 from './home/page1.vue'
+import Index from '../components/index.vue'
 
 var router = new VueRouter({
   routes: [
@@ -22,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log("home app mounted");
     },
     components: {
-      "sample": Sample
+      "sample": Sample,
+      "index": Index
     }
   })
 })
