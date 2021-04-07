@@ -100,7 +100,6 @@ GEM
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
     ffi (1.14.2)
-    foreman (0.87.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hamlit (2.14.4)
@@ -293,7 +292,6 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_bot_rails
-  foreman
   hamlit
   jbuilder (~> 2.5)
   jquery-rails
