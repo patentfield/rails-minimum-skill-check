@@ -26,7 +26,7 @@
             <th>patentTitle</th>
             <th>FirstNamedApplicant</th>
           </tr>
-          <tr v-for="e in shops">
+          <tr v-for="e in results">
             <td>{{ e["patentNumber"] }}</td>
             <td>{{ e["patentTitle"] }}</td>
             <td>{{ e["firstNamedApplicant"] }}</td>
@@ -47,7 +47,7 @@
     data: function(){
       return{
         errors: [],
-        shops: [],
+        results: [],
         word:  ""
       }
     },
@@ -75,7 +75,7 @@
           },
         })
         .then((response) => {
-          this.shops.length = 0;
+          this.results.length = 0;
           if(!response.data.length){
             for(let i = 0; i < alert.length; i++){
               alert[i].style.display="block";
@@ -88,7 +88,7 @@
             },3000);
           }
           for(let i = 0; i < response.data.length; i++) {
-            this.shops.push(response.data[i]);
+            this.results.push(response.data[i]);
           }
          }, (error) => {
            console.log(error);
@@ -103,7 +103,7 @@
   margin-top:70px;
 }
 
-.shop-list{
+.result-list{
   margin:15px;
 }
 

@@ -1,4 +1,4 @@
-module Gurumes
+module Usptos
   class SearchService
     def initialize(word)
       @word = word

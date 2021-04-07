@@ -1,1 +1,1 @@
-json.array!@shops
+json.array!@results
