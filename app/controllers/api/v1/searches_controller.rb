@@ -1,5 +1,6 @@
 class Api::V1::SearchesController < ApplicationController
   def index
-    @results = Usptos::SearchService.new(params[:word]).run
+    @results = Uspto::SearchService.new(params[:word]).run
+    render json: @results
   end
 end

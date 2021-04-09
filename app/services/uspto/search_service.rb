@@ -1,4 +1,4 @@
-module Usptos
+module Uspto
   class SearchService
     def initialize(word)
       @word = word
