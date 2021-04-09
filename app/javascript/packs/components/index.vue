@@ -29,7 +29,7 @@
           <tr v-for="e in results">
             <td>{{ e["patentNumber"] }}</td>
             <td>{{ e["patentTitle"] }}</td>
-            <td>{{ e["firstNamedApplicant"] }}</td>
+            <td>{{ e["firstNamedApplicant"][0] }}</td>
           </tr>
         </tbody>
       </table>
