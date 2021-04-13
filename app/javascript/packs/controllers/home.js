@@ -2,12 +2,13 @@
 
 import Sample from '../components/sample.vue'
 import Page1 from './home/page1.vue'
-import Index from '../components/index.vue'
+import Index from './home/index.vue'
 
 var router = new VueRouter({
   routes: [
     { path: "/page1", component: Page1},
-    { path: "/page2", component: {template: "<div>page2area</div>"}}
+    { path: "/page2", component: {template: "<div>page2area</div>"}},
+    { path: "/", component: Index},
   ]
 });
 
