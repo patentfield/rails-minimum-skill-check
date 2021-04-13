@@ -26,12 +26,18 @@
             <th>patentTitle</th>
             <th>FirstNamedApplicant</th>
           </tr>
-          <tr v-for="e in results">
+          <tr v-for="e in pagedTableData">
             <td>{{ e["patentNumber"] }}</td>
             <td>{{ e["patentTitle"] }}</td>
             <td>{{ e["firstNamedApplicant"][0] }}</td>
           </tr>
         </tbody>
+        <el-pagination
+          layout="prev, pager, next"
+          :total="this.results.length"
+          @current-change="setPage">
+        </el-pagination>
+
       </table>
     </div>
   </div>
@@ -48,10 +54,21 @@
       return{
         errors: [],
         results: [],
-        word:  ""
+        word:  "",
+        page: 1,
+        pageSize: 10,
       }
     },
+    computed: {
+      pagedTableData() {
+        return this.results.slice(this.pageSize * this.page - this.pageSize, this.pageSize * this.page)
+      }
+    },
+
     methods: {
+      setPage (val) {
+        this.page = val
+      },
       exec: function(){
         this.errors.length = 0;
         if(!this.word){
