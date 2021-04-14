@@ -5,40 +5,40 @@
         <li v-for="error in errors" class="errors-list">{{ error }}</li>
       </ul>
     </div>
-    <div class="row justify-content-center search-box">
-      <div class="col-offset-2 col-sm-8 col-offset-2">
+    <div class="row search-box">
+      <div class="col-md-4 col-md-offset-4">
         <form @submit.prevent="exec">
           <div class="input-group">
             <input v-model="word" class="form-control text-center" placeholder="Please input FirstNamedApplicant">
-
             <span class="input-group-addon btn"><button type="submit">検索</button></span>
           </div>
         </form>
       </div>
     </div>
-    <div class="row justify-content-center">
-
-
-      <table>
-        <tbody>
-          <tr>
-            <th>PatentNumber</th>
-            <th>patentTitle</th>
-            <th>FirstNamedApplicant</th>
-          </tr>
-          <tr v-for="e in pagedTableData">
-            <td>{{ e["patentNumber"] }}</td>
-            <td>{{ e["patentTitle"] }}</td>
-            <td>{{ e["firstNamedApplicant"][0] }}</td>
-          </tr>
-        </tbody>
+    <div v-show="0 < pagedTableData.length" class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <th class="list-title">PatentNumber</th>
+              <th class="list-title">patentTitle</th>
+              <th class="list-title">FirstNamedApplicant</th>
+            </tr>
+            <tr v-for="e in pagedTableData">
+              <td class="result-center results-responsive">{{ e["patentNumber"] }}</td>
+              <td class="results-padding results-responsive">{{ e["patentTitle"] }}</td>
+              <td class="result-center results-responsive">{{ e["firstNamedApplicant"][0] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-2 col-sm-offset-5">
         <el-pagination
           layout="prev, pager, next"
           :total="this.results.length"
           @current-change="setPage">
         </el-pagination>
-
-      </table>
+      </div>
     </div>
   </div>
 </template>
@@ -148,12 +148,37 @@
   animation : fadeOut 3s;
   animation-fill-mode: both;
 }
+
+.list-title{
+  text-align: center;
+}
+
+.result-center{
+  text-align: center;
+}
+
+.results-padding{
+padding: 5px;
+}
+
+table{
+background-color: #ffffff;
+margin: 10px 0px;
+}
+
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .results-responsive{
+  font-size: 5px;
   }
 }
 </style>
