@@ -15,6 +15,7 @@
         </form>
       </div>
     </div>
+    <div class="container">
     <div v-show="0 < pagedTableData.length" class="row">
       <div class="col-md-10 col-md-offset-1">
         <table border="1">
@@ -39,6 +40,7 @@
           @current-change="setPage">
         </el-pagination>
       </div>
+    </div>
     </div>
   </div>
 </template>
