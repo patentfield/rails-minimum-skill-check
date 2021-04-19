@@ -1,7 +1,8 @@
 module Uspto
   class SearchService
-    def initialize(word)
-      @word = word
+    def initialize(my_params)
+      @word = my_params[0]
+      @page = my_params[1]
 
     end
 
@@ -18,12 +19,13 @@ module Uspto
         "qf":"appEarlyPubNumber applId appLocation appType appStatus_txt appConfrNumber appCustNumber appGrpArtNumber appCls appSubCls appEntityStatus_txt patentNumber patentTitle primaryInventor firstNamedApplicant appExamName appExamPrefrdName appAttrDockNumber appPCTNumber appIntlPubNumber wipoEarlyPubNumber pctAppType firstInventorFile appClsSubCls rankAndInventorsList",
         "facet":"false",
         "sort":"applId asc",
-        "start":"0"
+        "start":"#{@page}"
       }
       headers = { "Content-Type" => "application/json" }
       d_response = http.post(uri.path, a_params.to_json, headers)
       @J_data = JSON.parse(d_response.body)
-      response = @J_data["queryResults"]["searchResponse"]["response"]["docs"]
+      # response = @J_data["queryResults"]["searchResponse"]["response"]["docs"]
+      response = @J_data["queryResults"]["searchResponse"]["response"]
 
     end
   end

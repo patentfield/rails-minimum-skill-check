@@ -11,6 +11,12 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :api, {format: 'json'} do
+      namespace :v1 do
+        resources :total_page, only: [:index]
+      end
+    end
+
     get "dashboard", to: 'dashboard#index'
     devise_for :users, controllers: {
       passwords: "users/passwords",

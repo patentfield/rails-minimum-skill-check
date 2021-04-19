@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="container">
-    <div v-show="0 < pagedTableData.length" class="row">
+    <div v-show="0 < results.length" class="row">
       <div class="col-md-10 col-md-offset-1">
         <table border="1">
           <tbody>
@@ -25,7 +25,7 @@
               <th class="list-title">patentTitle</th>
               <th class="list-title">FirstNamedApplicant</th>
             </tr>
-            <tr v-for="e in pagedTableData">
+            <tr v-for="e in results">
               <td class="result-center results-responsive">{{ e["patentNumber"] }}</td>
               <td class="results-padding results-responsive">{{ e["patentTitle"] }}</td>
               <td class="result-center results-responsive">{{ e["firstNamedApplicant"][0] }}</td>
@@ -33,10 +33,11 @@
           </tbody>
         </table>
       </div>
-      <div class="col-sm-2 col-sm-offset-5">
+      <div class="col-sm-4 col-sm-offset-4">
         <el-pagination
           layout="prev, pager, next"
-          :total="this.results.length"
+          page-size= 25
+          :total="this.number"
           @current-change="setPage">
         </el-pagination>
       </div>
@@ -56,21 +57,29 @@
       return{
         errors: [],
         results: [],
+        number: [],
         word:  "",
-        page: 1,
-        pageSize: 10,
-      }
-    },
-    computed: {
-      pagedTableData() {
-        return this.results.slice(this.pageSize * this.page - this.pageSize, this.pageSize * this.page)
+        page: 0,
       }
     },
 
     methods: {
       setPage (val) {
         this.page = val
+        axios
+          .get('/api/v1/searches',{
+            params: {
+              my_params: [this.word, this.page],
+            },
+          })
+          .then((response) => {
+            let i = 0;
+            i < response.data.length;
+            i++;
+            this.results.push(response.data[i]);
+          })
       },
+
       exec: function(){
         this.errors.length = 0;
         if(!this.word){
@@ -88,9 +97,18 @@
           return;
         }
 
-        axios.get('/api/v1/searches',{
+        axios
+        .get('/api/v1/total_page',{
           params: {
-            word: this.word
+            my_params: [this.word, this.page]
+          },
+        })
+        .then(response => (this.number = response.data))
+
+        axios
+        .get('/api/v1/searches',{
+          params: {
+            my_params: [this.word, this.page],
           },
         })
         .then((response) => {
