@@ -37,7 +37,7 @@
         <el-pagination
           layout="prev, pager, next"
           page-size= 25
-          :total="this.number"
+          :total="number"
           @current-change="setPage">
         </el-pagination>
       </div>
