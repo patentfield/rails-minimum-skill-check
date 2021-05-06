@@ -3,6 +3,7 @@ module Uspto
     def initialize(my_params)
       @word = my_params[0]
       @page = my_params[1]
+      @offset = (@page.to_i - 1) * 25
 
     end
 
@@ -19,7 +20,7 @@ module Uspto
         "qf":"appEarlyPubNumber applId appLocation appType appStatus_txt appConfrNumber appCustNumber appGrpArtNumber appCls appSubCls appEntityStatus_txt patentNumber patentTitle primaryInventor firstNamedApplicant appExamName appExamPrefrdName appAttrDockNumber appPCTNumber appIntlPubNumber wipoEarlyPubNumber pctAppType firstInventorFile appClsSubCls rankAndInventorsList",
         "facet":"false",
         "sort":"applId asc",
-        "start":"#{@page}"
+        "start":"#{@offset}"
       }
       headers = { "Content-Type" => "application/json" }
       d_response = http.post(uri.path, a_params.to_json, headers)

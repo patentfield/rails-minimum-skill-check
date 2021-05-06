@@ -36,9 +36,10 @@
       <div class="col-sm-4 col-sm-offset-4">
         <el-pagination
           layout="prev, pager, next"
-          page-size= 25
-          :total="number"
-          @current-change="setPage">
+          :page-size="25"
+          :total="total"
+          @current-change="setPage"
+          :current-page.sync="page">
         </el-pagination>
       </div>
     </div>
@@ -57,15 +58,18 @@
       return{
         errors: [],
         results: [],
-        number: [],
+        total: 0,
         word:  "",
-        page: 0,
+        page: 1,
       }
     },
 
     methods: {
       setPage (val) {
         this.page = val
+        this.searchPatents();
+      },
+      searchPatents (val) {
         axios
           .get('/api/v1/searches',{
             params: {
@@ -73,13 +77,13 @@
             },
           })
           .then((response) => {
-            let i = 0;
-            i < response.data.length;
-            i++;
-            this.results.push(response.data[i]);
+            this.results = [];
+            for(let i = 0; i < response.data.docs.length; i++) {
+              this.results.push(response.data.docs[i]);
+            }
+            this.total = response.data.total_count
           })
       },
-
       exec: function(){
         this.errors.length = 0;
         if(!this.word){
@@ -96,40 +100,7 @@
           },3000);
           return;
         }
-
-        axios
-        .get('/api/v1/total_page',{
-          params: {
-            my_params: [this.word, this.page]
-          },
-        })
-        .then(response => (this.number = response.data))
-
-        axios
-        .get('/api/v1/searches',{
-          params: {
-            my_params: [this.word, this.page],
-          },
-        })
-        .then((response) => {
-          this.results.length = 0;
-          if(!response.data.length){
-            for(let i = 0; i < alert.length; i++){
-              alert[i].style.display="block";
-            }
-            this.errors.push("指定された条件の特許が存在しません");
-            setTimeout(function(){
-              for(let i = 0; i < alert.length; i++){
-                alert[i].style.display="none";
-                }
-            },3000);
-          }
-          for(let i = 0; i < response.data.length; i++) {
-            this.results.push(response.data[i]);
-          }
-         }, (error) => {
-           console.log(error);
-         });
+        this.searchPatents();
       }
     }
   };
