@@ -12,6 +12,7 @@ p {
 </style>
 
 <script>
+
 export default {
   data: function () {
     return {
