@@ -69,7 +69,7 @@
         this.page = val
         this.searchPatents();
       },
-      searchPatents (val) {
+      searchPatents () {
         axios
           .get('/api/v1/searches',{
             params: {
