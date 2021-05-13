@@ -19,7 +19,7 @@ module Uspto
         "df":"patentTitle",
         "qf":"appEarlyPubNumber applId appLocation appType appStatus_txt appConfrNumber appCustNumber appGrpArtNumber appCls appSubCls appEntityStatus_txt patentNumber patentTitle primaryInventor firstNamedApplicant appExamName appExamPrefrdName appAttrDockNumber appPCTNumber appIntlPubNumber wipoEarlyPubNumber pctAppType firstInventorFile appClsSubCls rankAndInventorsList",
         "facet":"false",
-        "sort":"applId asc",
+        "sort":"appFilingDate asc",
         "start":"#{@offset}"
       }
       headers = { "Content-Type" => "application/json" }
