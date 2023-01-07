@@ -18,7 +18,7 @@
     "jest": "^24.9.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1",
-    "vue-jest": "^3.0.5",
+    "vue-jest": "^4.0.1",
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
